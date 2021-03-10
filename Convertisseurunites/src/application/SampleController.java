@@ -7,7 +7,6 @@ import javax.print.DocFlavor.URL;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -66,7 +65,31 @@ public class SampleController implements Initializable  {
 
     @FXML
     private ComboBox<String> box2long;
-
+    
+    @FXML
+    void check1() {
+    	verifNum(txt1long); }
+    
+    @FXML
+    void check2() {
+    	verifNum(txt2long); }
+    
+    @FXML
+    void check3() {
+    	verifNum(txt1vol); }
+    
+    @FXML
+    void check4() {
+    	verifNum(txt2vol); }
+    
+    @FXML
+    void check5() {
+    	verifNum(txt1temp); }
+    
+    @FXML
+    void check6() {
+    	verifNum(txt2temp); }
+  
     
     @FXML
     private void Quitter()
@@ -74,7 +97,7 @@ public class SampleController implements Initializable  {
     Alert alert=new Alert(AlertType.CONFIRMATION);
     alert.setHeaderText("Quitter?");
     alert.setTitle("CONFIRMATION");
-    alert.setContentText("Voulez vous quitter ?");
+    alert.setContentText("Voulez vous quitter?");
     Optional<ButtonType> result=alert.showAndWait();
     if(result.get()==ButtonType.OK)
     {
@@ -156,21 +179,50 @@ public class SampleController implements Initializable  {
     	convertir(txt2temp,txt1temp,box2temp,box1temp,listetemp);
     
     }
-   
-public void convertir(TextField texta,TextField textb,ComboBox boxa,ComboBox boxb, double [] tab)
-{
-int item1=boxa.getSelectionModel().getSelectedIndex();
-int item2=boxb.getSelectionModel().getSelectedIndex();
-double taux=tab[item2]/tab[item1];
-double res=taux*(Double.parseDouble(texta.getText()));
-//textb.setText(String.format("%.2f", res));
-textb.setText(Double.toString(res));
-}
-@Override
-public void initialize(java.net.URL location, ResourceBundle resources) {
-	// TODO Auto-generated method stub
+  void convertir(TextField txtA,TextField txtB,ComboBox<String> boxA,ComboBox<String> boxB,double [] tab)
+    {
+    	verifNum(txtA);
+    	
+    	int item1=boxA.getSelectionModel().getSelectedIndex();
+    	int item2=boxB.getSelectionModel().getSelectedIndex();
+    	try
+    	{
+    		double taux=tab[item2]/tab[item1];
+    		double res=taux*(Double.parseDouble(txtA.getText()));
+    		txtB.setText(Double.toString(res));
+    	} catch (NumberFormatException e)
+    	{
+    		txtA.setText("0");
+    	}	
+    }
+
+    void verifNum(TextField a)
+    {
+    	if(a.getText().equals("")) 
+    	a.setText("0");
+
+    	
+    	a.textProperty().addListener((observable,oldValue,newValue)->
+    	{
+    		if(!newValue.matches("^[0-9](\\.[0-9]+)?$"))
+    		{
+    			a.setText(newValue.replaceAll("[^\\d*\\.]", ""));
+    		}
+    		
+    	});
+    	
+    	
+    }
+
+	@Override
+	public void initialize(java.net.URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
-}
-
-}
-
+		
+	}
+        
+        
+ 

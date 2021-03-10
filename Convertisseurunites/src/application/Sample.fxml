@@ -29,8 +29,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="txt1long" layoutX="7.0" layoutY="71.0" onKeyReleased="#calculer1long" />
-                        <TextField fx:id="txt2long" layoutX="238.0" layoutY="71.0" onKeyReleased="#calculer2long" />
+                        <TextField fx:id="txt1long" layoutX="7.0" layoutY="71.0" onKeyPressed="#check1" />
+                        <TextField fx:id="txt2long" layoutX="238.0" layoutY="71.0" onKeyPressed="#check2" />
                         <ComboBox fx:id="box1long" layoutX="7.0" layoutY="113.0" onAction="#calculer1long" prefHeight="27.0" prefWidth="167.0" />
                         <ComboBox fx:id="box2long" layoutX="238.0" layoutY="113.0" onAction="#calculer2long" prefHeight="27.0" prefWidth="167.0" />
                         <Button layoutX="290.0" layoutY="195.0" mnemonicParsing="false" onAction="#Quitter" text="Quitter" />
@@ -42,8 +42,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="txt1temp" layoutX="7.0" layoutY="71.0" onKeyReleased="#calculer1temp" />
-                        <TextField fx:id="txt2temp" layoutX="238.0" layoutY="71.0" onKeyReleased="#calculer2temp" />
+                        <TextField fx:id="txt1temp" layoutX="7.0" layoutY="71.0" onKeyPressed="#check5" />
+                        <TextField fx:id="txt2temp" layoutX="238.0" layoutY="71.0" onKeyPressed="#check6" />
                         <ComboBox fx:id="box1temp" layoutX="7.0" layoutY="113.0" onAction="#calculer1temp" prefHeight="27.0" prefWidth="167.0" />
                         <ComboBox fx:id="box2temp" layoutX="238.0" layoutY="113.0" onAction="#calculer2temp" prefHeight="27.0" prefWidth="167.0" />
                         <Button layoutX="290.0" layoutY="195.0" mnemonicParsing="false" onAction="#Quitter" text="Quitter" />
@@ -55,8 +55,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="txt1vol" layoutX="7.0" layoutY="71.0" onKeyReleased="#calculer1vol" />
-                        <TextField fx:id="txt2vol" layoutX="238.0" layoutY="71.0" onKeyReleased="#calculer2vol" />
+                        <TextField fx:id="txt1vol" layoutX="7.0" layoutY="71.0" onKeyPressed="#check3" />
+                        <TextField fx:id="txt2vol" layoutX="238.0" layoutY="71.0" onKeyPressed="#check4" />
                         <ComboBox fx:id="box1vol" layoutX="7.0" layoutY="113.0" onAction="#calculer1vol" prefHeight="27.0" prefWidth="167.0" />
                         <ComboBox fx:id="box2vol" layoutX="238.0" layoutY="113.0" onAction="#calculer2vol" prefHeight="27.0" prefWidth="167.0" />
                         <Button layoutX="290.0" layoutY="195.0" mnemonicParsing="false" onAction="#Quitter" text="Quitter" />
